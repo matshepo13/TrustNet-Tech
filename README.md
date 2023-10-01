@@ -7,8 +7,17 @@ Key Objectives
 
 
 1.Implement a resilient and redundant architecture to enhance data availability.
+
+
+
 2.Facilitate seamless data retrieval and updates during system outages.
+
+
+
 3.Support essential government services, including identification document issuance and data management.
+
+
+
 4.Enhance cybersecurity measures to safeguard citizen data.
 
 
@@ -39,10 +48,10 @@ Architecture Overview
 
 Our architectural design is meticulously crafted to meet the project's objectives:
 
-1.Redundant Infrastructure: We implement a multi-region cloud infrastructure to ensure high availability and data redundancy. In the event of an outage in one region, traffic seamlessly switches to a redundant region, preventing service interruptions.
+1.Redundant Infrastructure: We implement a  cloud database replica infrastructure for every service center to ensure high availability and data redundancy. In the event of an offline systems, traffic seamlessly switches to a redundant system, preventing service interruptions.
 
 
-2.Database Replication: Database replication is employed to replicate data across regions, providing data redundancy and reducing data retrieval times.
+2.Database Replication: Database replication is employed using Multi-Master replication processes.
 
 3.VLAN Segmentation: We use VLANs to logically segment network traffic, ensuring data isolation, security, and efficient traffic management between Home Affairs regions.
 
@@ -60,21 +69,23 @@ Our choice of technologies adheres to industry standards and best practices:
 4.Security: We employ industry-standard security measures, including data encryption, access controls, and authentication protocols.
 
 
-1.Usability
+Usability
 
 We prioritize usability to ensure a seamless user experience:
 
 User Interface: Our user-friendly web interface allows users to access critical services with ease.
 
 
-Development Environment: 
-
-Set up your development environment, including Visual studio code or any IDE that supports our stack.
+Development Environment: Set up your development environment, including Visual studio code or any IDE that supports our stack.
 
 
 
 Contributing
-We welcome contributions from the community. To contribute to the project:
+
+
+We welcome contributions from the community. 
+
+To contribute to the project:
 
 Fork the project repository.
 
@@ -87,4 +98,6 @@ Push your changes to your fork.
 Create a pull request to merge your changes into the main project.
 
 License
-This project is licensed under the [License Name] - see the LICENSE file for details.
+
+
+This project is licensed under the TrustNetTEch.
