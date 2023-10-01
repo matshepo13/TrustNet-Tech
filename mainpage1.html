@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link  rel="stylesheet" href="mainpage1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<body>
+     
+    <div class="header">
+        <img src="pictures/homeaffairs.png" alt="Home Affairs" width="1600">
+    </div>
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <h3>Welcome</h3>
+                <p>Please enter the client's</p>
+                <!-- ID Number input field with curved placeholder and clickable icon -->
+                <div class="input-group">
+                    <input type="text" class="form-control rounded-left" placeholder="ID Number" id="idNumberInput" value="" onkeypress="checkEnter(event)" />
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" onclick="searchClient()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Current</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Next</a>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Identity Document</h3>
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name" id="firstName" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Surname" id="surname" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Sex" id="sex" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nationality" id="nationality" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="maxl">
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="ID Number" id="idNumber" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Country of Birth" id="countryOfBirth" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Date of Birth" id="dateOfBirth" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option class="hidden"  selected enabled>Marital Status</option>
+                                        <option>Single</option>
+                                        <option>Married</option>
+                                        <option>Divorced</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <h3 class="register-heading">Identity Document</h3>
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Sex" id="sex" value="" autocomplete="sex" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nationality" id="nationality" value="" autocomplete="country" />
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Date of Birth" id="dateOfBirth" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone" id="phone" value="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Issue Date" id="issueDate" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Expiry Date" id="expiryDate" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option class="hidden"  selected enabled>Relationship With Parent/Guardian</option>
+                                        <option>Mother</option>
+                                        <option>Father</option>
+                                        <option>Guardian</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Parent/Guardian ID number" id="parentGuardianId" value="" />
+                                </div>
+                                <button class="btn btn-primary btnRegister" onclick="openMainPage2()">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Your existing CSS styles here */
+        /* ... */
+    </style>
+
+    <script>
+        // JavaScript function to open mainpage2.html
+        function openMainPage2() {
+            window.location.href = "camera.html";
+        }
+
+    function autofillExpiryDate() {
+        // Get today's date
+        const today = new Date();
+        
+        // Calculate the expiry date by adding 10 years to today's date
+        const expiryDate = new Date(today);
+        expiryDate.setFullYear(today.getFullYear() + 10);
+        
+        // Format the expiry date as DD/MM/YYYY
+        const expiryDateFormat = formatDate(expiryDate);
+        
+        // Autofill the expiry date placeholder with the generated date
+        document.getElementById("expiryDate").value = expiryDateFormat;
+    }
+    
+    // Function to format a date as DD/MM/YYYY
+    function formatDate(date) {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // January is 0!
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    }
+    
+    // Call the autofillExpiryDate function when the page loads
+    window.onload = function () {
+        autofillExpiryDate();
+    };
+
+
+    
+        // JavaScript function to perform a client search
+        function searchClient() {
+            // Implement your search logic here
+            alert("Performing client search...");
+        }
+    
+        // JavaScript function to handle Enter key press in the ID Number input
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                const idNumberInput = document.getElementById("idNumberInput").value;
+                // Here, you can implement logic to read the text file and autofill the form
+                // For simplicity, we'll assume the data is stored in an object
+                const clientData = {
+                    "123456789012": {
+                        firstName: "Lebo Karabo",
+                        surname: "Maluleka",
+                        sex: "F",
+                        nationality: "RSA",
+                        idNumber: "123456789012",
+                        countryOfBirth: "RSA",
+                        dateOfBirth: "16 June 1986",
+                        // Add more data fields as needed
+                    }
+                };
+                const clientInfo = clientData[idNumberInput];
+                if (clientInfo) {
+                    // Fill the form fields with client information
+                    document.getElementById("firstName").value = clientInfo.firstName;
+                    document.getElementById("surname").value = clientInfo.surname;
+                    document.getElementById("sex").value = clientInfo.sex;
+                    document.getElementById("nationality").value = clientInfo.nationality;
+                    document.getElementById("idNumber").value = clientInfo.idNumber;
+                    document.getElementById("countryOfBirth").value = clientInfo.countryOfBirth;
+                    document.getElementById("dateOfBirth").value = clientInfo.dateOfBirth;
+                    // Add more fields as needed
+                } else {
+                    alert("Client not found");
+                }
+            }
+        }
+    </script>
+
+    <script>
+        // JavaScript function to clear form fields on page load
+window.onload = function () {
+    // Clear all form fields
+    document.getElementById("firstName").value = "";
+    document.getElementById("surname").value = "";
+    document.getElementById("sex").value = "";
+    document.getElementById("nationality").value = "";
+    document.getElementById("idNumber").value = "";
+    document.getElementById("countryOfBirth").value = "";
+    document.getElementById("dateOfBirth").value = "";
+    document.getElementById("status").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("issueDate").value = "";
+    document.getElementById("expiryDate").value = "";
+    document.getElementById("parentGuardianId").value = "";
+
+    // Optionally, reset the Marital Status and Relationship select fields
+    document.querySelector("#myTabContent select").selectedIndex = 0;
+};
+
+    </script>
+</body>
+</html>

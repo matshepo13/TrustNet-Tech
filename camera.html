@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link  rel="stylesheet" href="mainpage1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<body>
+    <div class="header">
+        <img src="pictures/homeaffairs.png" alt="Home Affairs" width="1600">
+    </div>
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <p class="rule-heading"><u>Photo Rules</u></p>
+                <p><u>Picture Rules</u></p>
+                <ol class="numbered-list">
+                    <li>Do not move away from the camera box</li>
+                    <li>Do not wear a mask</li>
+                    <li>Do not wear a hat</li>
+                    <li>Do not wear eyeglasses</li>
+                </ol>
+            </div>
+            <div class="col-md-9 register-right">
+
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Current</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Next</a>
+                    </li>
+        
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <!-- Remove the "Identity Picture" text and make it green -->
+                        <div class="register-heading green-text">
+                            <h1>Identity Picture</h1>
+                      
+                        <div class="center">
+                            <div class="camera-container">
+                                <video id="camera" autoplay></video>
+                            </div>
+                            <!-- Increase the size of the capture button and make it green and clickable -->
+                            <div class="capture-container">
+                                <button id="capture" class="green-button">Capture</button>
+                            </div>
+                        </div>
+                        <script src="main.js"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loading-modal" class="modal">
+  <div class="modal-content">
+    <p>Generating User Identity</p>
+    <div class="slider-container">
+      <div class="slider slider-1"></div>
+      <div class="slider slider-2"></div>
+      <div class="slider slider-3"></div>
+    </div>
+  </div>
+</div>
+
+      
+<script>
+
+$(document).ready(function () {
+  $("#profile-tab").click(function () {
+    // Show the loading modal
+    $("#loading-modal").show();
+
+    // Simulate loading for 10 seconds
+    setTimeout(function () {
+      // Hide the loading modal after 10 seconds
+      $("#loading-modal").hide();
+
+      // Redirect to mainpage4.html
+      window.location.href = "mainpage4.html";
+    }, 10000); // 10 seconds
+  });
+});
+
+
+</script>      
+</body>
+</html>

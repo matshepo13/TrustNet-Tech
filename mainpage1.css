@@ -1,0 +1,315 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+/* .register{
+    background: -webkit-linear-gradient(left, #56b45b, #56b45b);
+    margin-top: 1%;
+    padding: 1%;
+} */
+.register-left{
+    text-align: center;
+    color: #fff;
+    margin-top: 4%;
+}
+
+.register {
+    max-width: 800px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    background: -webkit-linear-gradient(left, #56b45b, #56b45b);
+    height: 100%;
+    padding: 1%;
+}
+
+
+.register-left input{
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    width: 60%;
+    background: #f8f9fa;
+    font-weight: bold;
+    color: #56b45b;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+.register-right{
+    background: #f8f9fa;
+    border-top-left-radius: 5% 40%;
+    border-bottom-left-radius: 5% 40%;
+}
+.register-left img{
+    margin-top: 15%;
+    margin-bottom: 5%;
+    width: 25%;
+    -webkit-animation: mover 2s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+.register-left {
+    text-align: center;
+    color: #fff;
+    /* margin-top: 4%; Remove this margin */
+    padding: 2%; /* Add padding to reduce space */
+}
+
+.register .register-form{
+    padding: 10%;
+    margin-top: 10%;
+}
+.btnRegister{
+    float: right;
+    margin-top: 10%;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 2%;
+    background: #b36f22;
+    color: #fff;
+    font-weight: 600;
+    width: 50%;
+    cursor: pointer;
+}
+.register .nav-tabs{
+    margin-top: 3%;
+    border: none;
+    background: #56b45b;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+}
+.register .nav-tabs .nav-link{
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.register .nav-tabs .nav-link.active{
+    width: 100px;
+    color: #56b45b;
+    border: 2px solid #56b45b;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+}
+.register-heading{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+}
+
+/* Add styles for the underlined heading */
+.rule-heading {
+    text-align: center;
+    color: #56b45b; /* Green color */
+    text-decoration: underline;
+    margin-top: 4%;
+    font-weight: bold;
+}
+
+/* Increase the size of the camera container */
+/* Adjust the margin-bottom property to move the camera container up */
+.camera-container {
+    width: 350px; /* Adjust the size as needed */
+    height: 280px; /* Adjust the size as needed */
+    border: 2px solid #333;
+    margin-top: -1px; /* Move it up by changing this value */
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Style for the green capture button */
+.green-button {
+    background-color: #56b45b; /* Green color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 1.5rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 2%;
+    font-weight: 600;
+    width: 100%; /* Allow the button to fully display */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Add a transition effect for hover */
+}
+
+.green-button:hover {
+    background-color: #4a9d49; /* Darker green color on hover */
+}
+
+/* Rest of your CSS remains the same */
+
+
+
+#camera {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capture-container {
+    text-align: center;  
+    width: 30%;
+    margin-bottom: 150px;
+}
+
+.register-heading green-text{
+    text-align: center;
+    margin-top: -2px;
+    margin-bottom: -2px;
+    color: #495057;
+    font-size: 20px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    background-color: #272121;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+  
+  /* Loading circles styles */
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .loader-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 5px;
+    animation: spin 1s linear infinite;
+  }
+  
+  .circle-1 {
+    background-color: #56b45b; /* Green */
+  }
+  
+  .circle-2 {
+    background-color: #3498db; /* Blue */
+  }
+  
+  .circle-3 {
+    background-color: #e74c3c; /* Red */
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+/* Loading modal with sliding circles animation */
+.slider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the sliders horizontally */
+    align-items: center;
+    margin-top: 20px; /* Adjust the margin to bring the sliders closer */
+  }
+  
+  .slider {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: slide 1s linear infinite;
+    margin: 0 10px; /* Adjust the margin to bring the sliders closer */
+  }
+  
+  .slider-1 {
+    background-color: #0b2231; /* Green for the first slider */
+  }
+  
+  .slider-2 {
+    background-color: #56b45b; /* Blue for the second slider */
+  }
+  
+  .slider-3 {
+    background-color: #0b2231; /* Red for the third slider */
+  }
+  
+  @keyframes slide {
+    0%, 100% {
+      transform: translateX(-10px); /* Adjust the distance for smoother animation */
+    }
+    25% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px); /* Adjust the distance for smoother animation */
+    }
+    75% {
+      transform: translateX(0);
+    }
+  }
+
+  
+    /* Style the search icon button */
+    .input-group-append button {
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    /* Style the search icon */
+    .input-group-append button i {
+        color: #56b45b; /* Green color */
+        font-size: 1.2rem;
+    }
+
+    /* Style to make the input placeholder curved on both sides */
+    .rounded-left {
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+    }
+  

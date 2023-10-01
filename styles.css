@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.camera-container {
+    width: 500px; /* Adjust the size as needed */
+    height: 320px; /* Adjust the size as needed */
+    border: 2px solid #41eb0d;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#camera {
+    width: 150%;
+    height: 150%;
+    object-fit: cover;
+}
+
+.capture-container {
+    text-align: center;
+}

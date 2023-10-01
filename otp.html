@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send OTP</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Add jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> <!-- Add SweetAlert2 for nicer alerts -->
+</head>
+<body>
+    <div class="col-md-9 register-right">
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <h3 class="register-heading">Identity Document</h3>
+                
+                <!-- Cellphone number input -->
+                <div class="form-group">
+                    <input type="text" class="form-control" id="cellphoneInput" placeholder="+27">
+                </div>
+
+                <!-- Send OTP button -->
+                <button type="button" class="btn btn-primary" id="sendOtpButton">Send OTP</button>
+            
+        </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to generate a random 4-digit OTP
+        function generateOTP() {
+            return Math.floor(1000 + Math.random() * 9000);
+        }
+
+        // Send OTP button click event
+        document.getElementById('sendOtpButton').addEventListener('click', function () {
+            const recipientNumber = '+27834578869'; // Replace with the recipient's phone number
+            const senderNumber = '+12565783463'; // Replace with your Twilio phone number
+            const accountSid = 'AC78fa374225c1a135af09b9f1fe0b2532'; // Replace with your Twilio Account SID
+            const authToken = '83a7f9b8259fda5a8271fc27ba856bda'; // Replace with your Twilio Auth Token
+
+            // Generate an OTP
+            const otp = generateOTP();
+
+            // Send SMS using Twilio REST API
+            $.ajax({
+                url: `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`,
+                type: 'POST',
+                data: {
+                    To: recipientNumber,
+                    From: senderNumber,
+                    Body: `Your OTP is: ${otp}`,
+                },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Authorization", "Basic " + btoa(accountSid + ":" + authToken));
+                },
+                success: function () {
+                    Swal.fire({
+                        title: 'OTP Sent',
+                        text: `OTP sent successfully to ${recipientNumber}.`,
+                        icon: 'success'
+                    });
+                },
+                error: function (error) {
+                    Swal.fire({
+                        title: 'Error',
+                        text: `Error sending OTP: ${error.responseJSON.message}`,
+                        icon: 'error'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
